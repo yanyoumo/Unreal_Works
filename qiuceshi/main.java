@@ -105,7 +105,7 @@ public class main
 	    	ans*=10;
 	    	ans+=s.charAt(i)-'0';
 	    }
-	    return ans<=Year?ans:-1;
+	    return ans<=Year&&ans>=1900?ans:-1;
 	}
 	void GetMonth()
 	{
@@ -236,7 +236,7 @@ public class main
 	    }
 	    return ans;
 	}
-	account IsAccount()
+	account IsAccount(int t)
 	{
 		int id=-1;
 		GetAccount();
@@ -252,7 +252,7 @@ public class main
 			System.out.println("Operation Failed! The account number doses not exist!");
 			return null;
 		}
-		if (a.enable==0)
+		if (a.enable==0&&t==0)
 		{
 			System.out.println("Operation Failed! The account is suspended!");
 			return null;
@@ -313,7 +313,7 @@ public class main
 	}
 	void Deposit()
 	{
-		account a=IsAccount();
+		account a=IsAccount(0);
 		if (a==null)
 			return;
 		int type=-1;
@@ -334,7 +334,7 @@ public class main
 	}
 	void Clear()
 	{
-		account a=IsAccount();
+		account a=IsAccount(0);
 		if (a==null)
 			return;
 		list.put(String.valueOf(a.id),new account(a.id,a.pin,a.type,a.enable,a.rest+a.pend,0,a.lim));
@@ -346,7 +346,7 @@ public class main
 	}
 	void Withdraw()
 	{
-		account a=IsAccount();
+		account a=IsAccount(0);
 		if (a==null)
 			return;
 		GetPin();
@@ -382,7 +382,7 @@ public class main
 	}
 	void Suspend()
 	{
-		account a=IsAccount();
+		account a=IsAccount(1);
 		if (a==null)
 			return;
 		GetPin();
@@ -404,7 +404,7 @@ public class main
 	}
 	void Close()
 	{
-		account a=IsAccount();
+		account a=IsAccount(0);
 		if (a==null)
 			return;
 		GetPin();
