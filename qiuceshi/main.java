@@ -181,7 +181,7 @@ public class main
         	date=Read2(31);
         	if (year==Year&&month==Month&&date>Date)
         		date=-1;
-        	day[2]=run(year)==0?28:29;
+        	day[2]=run(year)==1?28:29;
         	if (date>day[month])
         		date=-1;
         	if (date!=-1)
