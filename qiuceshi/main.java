@@ -124,7 +124,7 @@ public class main
 	    	ans*=10;
 	    	ans+=s.charAt(i)-'0';
 	    }
-	    return ans<=lim?ans:-1;
+	    return ans<=lim&&ans>0?ans:-1;
 	}
 	void GetDate()
 	{
