@@ -199,7 +199,7 @@ public class main
 			if (t!=-1)
 				break;
 		}
-		if (judge(name,address)%2==1)
+		if (!(judge(name,address)%2==0&&t==3))
 		{
 			int id=next,pin=(int)(Math.random()*(1<<30)),type=t,enable=1;
         	double rest=0,pend=0,lim=0;
