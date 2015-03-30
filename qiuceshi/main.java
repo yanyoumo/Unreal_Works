@@ -274,18 +274,21 @@ public class main
 		double ans=0,t=1;
 		char[] s=cin.nextLine().toCharArray();
 		int l=s.length;
-		if (s[l-2]=='.')
-		{
-			t=10;
-			s[l-2]=s[l-1];
-			l--;
-		}
-		else if (s[l-3]=='.')
-		{
-			t=100;
-			s[l-3]=s[l-2];
-			s[l-2]=s[l-1];
-			l--;
+		if (l>=3)
+		{	
+			if (s[l-2]=='.')
+			{
+				t=10;
+				s[l-2]=s[l-1];
+				l--;
+			}
+			else if (s[l-3]=='.')
+			{
+				t=100;
+				s[l-3]=s[l-2];
+				s[l-2]=s[l-1];
+				l--;
+			}
 		}
 		for (int i=0;i<l;i++)
 	    {
